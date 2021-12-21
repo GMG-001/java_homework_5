@@ -1,5 +1,6 @@
 import java.sql.*;
 public class CRUD {
+    // ბაზასთან დაკავშირება
     public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -11,6 +12,7 @@ public class CRUD {
         }
     }
 
+    //ბაზიდან მონაცემების წამოღება
     public static void read() {
         Connection connection = getConnection();
 
@@ -28,6 +30,8 @@ public class CRUD {
             }
         }
     }
+
+    // ბაზაში ახალი მონაცემის ჩაწერა
     public static void write() {
         Connection connection = getConnection();
 
@@ -54,6 +58,7 @@ public class CRUD {
         }
     }
 
+    // ბაზაში მონაცემის განახლება
     public static void update() {
         Connection connection = getConnection();
 
@@ -79,6 +84,7 @@ public class CRUD {
         }
     }
 
+    //ბაზიდან მონაცეის ამოღება
     public static void delete() {
         Connection connection = getConnection();
 
@@ -103,6 +109,7 @@ public class CRUD {
         }
     }
 
+    // ბაზიდან წაკითხული მონაცემების გამოტანა კონსოლში
     private static void printResultSet(ResultSet resultSet) throws SQLException {
         System.out.println("Customers: ");
         while (resultSet.next()) {
